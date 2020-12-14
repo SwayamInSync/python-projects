@@ -23,7 +23,7 @@ screen.onkey(l_paddle.down, "s")
 
 game_is_on = True
 while game_is_on:
-    time.sleep(ball.move_speed)  # slowing time to see the ball going
+    time.sleep(ball.move_speed)  # controlling the time delay to manupilate the speed of ball ( lesser the value as compare to 1 inside time.sleep() faster will be the spped of ball
     screen.update()
     ball.move_up()
     if ball.ycor() > 280 or ball.ycor() < -280:
