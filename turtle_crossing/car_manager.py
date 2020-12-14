@@ -15,7 +15,7 @@ class CarManager:
 
     def create_new_cars(self):
         random_case = random.randint(1,6)
-        if random_case == 1:
+        if random_case == 1: # making every new car by 1/6 th of probability
             new_car = Turtle(shape="square")
             new_car.shapesize(stretch_len=2, stretch_wid=1)
             new_car.penup()
