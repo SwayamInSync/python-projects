@@ -30,10 +30,10 @@ class Snake:
 
     def move(self):
         for seg_num in range(len(self.segments) - 1, 0, -1):
-            new_x = self.segments[seg_num - 1].xcor()
-            new_y = self.segments[seg_num - 1].ycor()
-            self.segments[seg_num].goto(new_x, new_y)
-        self.head.forward(MOVE_DISTANCE)
+            new_x = self.segments[seg_num - 1].xcor() # getting the xcor of the segment just before the segment targetting by loop
+            new_y = self.segments[seg_num - 1].ycor() # getting the xcor of the segment just before the segment targetting by loop
+            self.segments[seg_num].goto(new_x, new_y) # making the loop targetted segment to go to the position of the segment ahead of it except head
+        self.head.forward(MOVE_DISTANCE) # moving the head forward 
 
     def up(self):
         if self.head.heading() != DOWN:
