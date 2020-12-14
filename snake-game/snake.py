@@ -29,7 +29,7 @@ class Snake:
         self.add_segment(self.segments[-1].position())
 
     def move(self):
-        for seg_num in range(len(self.segments) - 1, 0, -1):
+        for seg_num in range(len(self.segments) - 1, 0, -1):  # in range (a,b) ==> [a,b) hence head not in under loop
             new_x = self.segments[seg_num - 1].xcor() # getting the xcor of the segment just before the segment targetting by loop
             new_y = self.segments[seg_num - 1].ycor() # getting the xcor of the segment just before the segment targetting by loop
             self.segments[seg_num].goto(new_x, new_y) # making the loop targetted segment to go to the position of the segment ahead of it except head
