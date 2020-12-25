@@ -19,7 +19,7 @@ def is_known():
     global current_card, known_cards
     to_learn.remove(current_card)
     w = pandas.DataFrame(to_learn)
-    w.to_csv("data/words_to_learn.csv", index=False)
+    w.to_csv("data/words_to_learn.csv", index=False) # do not add index of the records while writing into a csv file (index = False)
     print(len(to_learn))
     next_card()
 
