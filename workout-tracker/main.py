@@ -2,11 +2,11 @@ import requests
 from datetime import datetime
 
 
-APP_ID = "959e9ea0"
-API_KEY = "a8aa62d90467ca872b91fa4593276b3c"
+APP_ID = <Your nutritionix app_id>
+API_KEY = <your nutritionix api_key>
 nutrionix_endpoint = "https://trackapi.nutritionix.com/v2/natural/exercise"
 
-sheety_endpoint = "https://api.sheety.co/bdbc231c7faf14c1881bf01027bd7abc/workoutsTracking/workouts"
+sheety_endpoint = <your sheety endpoint>
 
 
 
@@ -39,5 +39,5 @@ for exercise in result["exercises"]:
         }
     }
 
-    response = requests.post(url=sheety_endpoint, json=body, auth=("rootacess3000", "rootacess"))
+    response = requests.post(url=sheety_endpoint, json=body, auth=(<sheety username>, <sheety password>))
     print(response.text)
