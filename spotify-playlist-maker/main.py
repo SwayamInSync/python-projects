@@ -62,7 +62,7 @@ only_song_uris = [uri.split(':')[2] for uri in song_uris]
 
 # adding songs to playlist
 
-sp.playlist_add_items(playlist_id="3QxgMlm5qKquaH2mz5gAM9",
+sp.playlist_add_items(playlist_id="<Your spotify playlist id>",
                       items=only_song_uris)
 
 
