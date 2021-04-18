@@ -1,0 +1,44 @@
+{% extends 'bootstrap/base.html' %}
+
+
+{% block title %} All cafes {% endblock %}
+
+{% block content %}
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Image</th>
+        <th scope="col">Location on map</th>
+        <th scope="col">Location</th>
+        <th scope="col">Has Sockets</th>
+        <th scope="col">Has WIFI</th>
+        <th scope="col">Has toilets</th>
+        <th scope="col">Can take calls</th>
+        <th scope="col">Seats</th>
+        <th scope="col">Coffee Price</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for cafe in all_cafes: %}
+    <tr>
+        <td>{{cafe.id}}</td>
+        <td>{{cafe.name}}</td>
+        <td><img style="width:200px" src="{{cafe.img_url}}" /></td>
+        <td><a href="{{cafe.map_url}}">Map Link</a></td>
+        <td>{{cafe.location}}</td>
+        <td>{{cafe.has_sockets}}</td>
+        <td>{{cafe.has_wifi}}</td>
+        <td>{{cafe.has_toilets}}</td>
+        <td>{{cafe.can_take_calls}}</td>
+        <td>{{cafe.seats}}</td>
+        <td>{{cafe.coffee_price}}</td>
+        <td><a href="{{ url_for('delete_cafe', id=cafe.id) }}">delete cafe</a></td>
+
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
