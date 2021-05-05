@@ -1,0 +1,18 @@
+{% extends 'bootstrap/base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block content %}
+<h1>TODOS</h1>
+{% if todos | length == 0: %}
+<h2>No todos</h2>
+{% else: %}
+{% for todo in todos: %}
+<h3><a href="{{ url_for('done_todo', id=todo.id) }}">{{ todo.item }}</a></h3>
+{% endfor %}
+{% endif %}
+
+<h1>Done Todos</h1>
+{% for dtodo in done_todos: %}
+<h3>{{ dtodo.item }}</h3>
+{% endfor %}
+{% endblock %}
