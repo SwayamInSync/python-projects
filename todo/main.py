@@ -13,6 +13,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///todoDB.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
+# you can also create a user login and relate their todos to specific users
 
 class Todos(db.Model):
     id = db.Column(db.Integer, primary_key=True)
