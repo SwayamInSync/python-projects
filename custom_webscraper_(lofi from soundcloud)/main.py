@@ -1,7 +1,7 @@
 from selenium import webdriver
 import time
 
-chrome_driver_path = "/Users/swayam/development_resources/chromedriver"
+chrome_driver_path = "<path to chrome driver>"
 lofi_songs = []
 
 driver = webdriver.Chrome(executable_path=chrome_driver_path)
