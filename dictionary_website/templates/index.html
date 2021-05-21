@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dictionary</title>
+</head>
+<body>
+    <form action="/" method="post">
+        <input type="text" name="word" placeholder="enter word">
+        <button type="submit">Search</button>
+    </form>
+
+    {% if data | length != 0: %}
+        {% for meaning in data: %}
+        <h2>Definition: {{meaning.get('definition')}}</h2>
+            {% if meaning.get('image_url'): %}
+                <img src="{{meaning.get('image_url')}}" />
+            {%endif%}
+        {% endfor %}
+    {% endif %}
+</body>
+</html>
