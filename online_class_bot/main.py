@@ -6,20 +6,24 @@ from datetime import datetime, timedelta
 
 pyautogui.FAILSAFE = True
 
+"""
+Before using it remember it only work for google meet, also you need to change the path to your chrome browser.
+replace the (x,y) coordinated inside pyautogui.click() to your screen's respective coordinates.
+"""
 
 def open_chrome(meet_code):
-    chrome_path = 'open -a /Applications/Google\ Chrome.app %s'
+    chrome_path = 'open -a /Applications/Google\ Chrome.app %s' # replcae the path to your chrome browser
     if webbrowser.get(chrome_path).open("https://meet.google.com/"):
         pyautogui.sleep(3)
-        pyautogui.click(323, 570)
+        pyautogui.click(323, 570) #coordinate for meet_code input
         pyautogui.write(meet_code)
         pyautogui.sleep(1.2)
         pyautogui.press('enter')
         pyautogui.sleep(5)
-        pyautogui.hotkey('command', 'e')
-        pyautogui.hotkey('command', 'd')
+        pyautogui.hotkey('command', 'e') # stop the video
+        pyautogui.hotkey('command', 'd') # mute yourself
         pyautogui.sleep(5)
-        pyautogui.click(1029, 488)
+        pyautogui.click(1029, 488) # coordinate for joining class button
 
 
 def find_class():
@@ -43,6 +47,10 @@ def find_class():
         return True
     return False
 
+
+"""
+for windows crontab don't work so use while loop below
+"""
 
 while True:
     print("searching class...")
