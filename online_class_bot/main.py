@@ -15,6 +15,7 @@ replace the (x,y) coordinated inside pyautogui.click() to your screen's respecti
 
 def open_chrome(meet_code, duration):
     chrome_path = 'open -a /Applications/Google\ Chrome.app %s'  # replcae the path to your chrome browser
+    print("class found, joining")
     if webbrowser.get(chrome_path).open("https://meet.google.com/"):
         pyautogui.sleep(3)
         pyautogui.click(323, 570)  # coordinate for meet_code input
@@ -34,7 +35,7 @@ def open_chrome(meet_code, duration):
                 os.system("killall -9 'Google Chrome'")
                 break
             else:
-                time.sleep(1) # modify it according to your ram usage and common sense for timing check
+                time.sleep(60*10) # modify it according to your ram usage and common sense for timing check
 
 
 def find_class():
@@ -68,7 +69,6 @@ while True:
     print("searching class...")
     sec = find_class()
     if sec:
-        print("class found, joining")
         time.sleep(10) # waiting for 10 seconds before searching for a new class
     else:
         print("class not found")
