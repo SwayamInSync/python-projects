@@ -34,7 +34,7 @@ def open_chrome(meet_code, duration):
                 os.system("killall -9 'Google Chrome'")
                 break
             else:
-                time.sleep(1)
+                time.sleep(1) # modify it according to your ram usage and common sense for timing check
 
 
 def find_class():
@@ -69,7 +69,7 @@ while True:
     sec = find_class()
     if sec:
         print("class found, joining")
-        time.sleep(10)
+        time.sleep(10) # waiting for 10 seconds before searching for a new class
     else:
         print("class not found")
         print("sleeping for 1 hour")
