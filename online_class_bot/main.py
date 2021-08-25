@@ -59,5 +59,5 @@ while True:
         break
     else:
         print("class not found")
-        print("sleeping for 1 minute")
-        time.sleep(60)
+        print("sleeping for 1 hour")
+        time.sleep(60*60)
